@@ -1,0 +1,46 @@
+{
+  "name": "@packforge/packs",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./game-studio": {
+      "types": "./dist/game-studio/index.d.ts",
+      "import": "./dist/game-studio/index.js"
+    },
+    "./coffee-shop": {
+      "types": "./dist/coffee-shop/index.d.ts",
+      "import": "./dist/coffee-shop/index.js"
+    },
+    "./boutique-hotel": {
+      "types": "./dist/boutique-hotel/index.d.ts",
+      "import": "./dist/boutique-hotel/index.js"
+    },
+    "./festival": {
+      "types": "./dist/festival/index.d.ts",
+      "import": "./dist/festival/index.js"
+    },
+    "./space-colony": {
+      "types": "./dist/space-colony/index.d.ts",
+      "import": "./dist/space-colony/index.js"
+    },
+    "./scrapyard": {
+      "types": "./dist/scrapyard/index.d.ts",
+      "import": "./dist/scrapyard/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@packforge/core": "^0.1.0"
+  }
+}

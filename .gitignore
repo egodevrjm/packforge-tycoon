@@ -1,0 +1,17 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.vite/
+.DS_Store
+
+# Build outputs for workspace packages
+packages/*/dist/
+
+# Local/generated SDK package cache. The app serves checked-in downloads from public/downloads.
+/downloads/
+
+# Logs and local environment
+*.log
+.env
+.env.*

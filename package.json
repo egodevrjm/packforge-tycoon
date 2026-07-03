@@ -1,0 +1,29 @@
+{
+  "name": "packforge-tycoon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run build:packages && tsc && vite build",
+    "build:packages": "npm run build -w @packforge/core && npm run build -w @packforge/packs && npm run build -w @packforge/builder-kit",
+    "check:packages": "npm run build -w @packforge/core && npm run check -w @packforge/packs && npm run check -w @packforge/builder-kit",
+    "pack:sdk": "npm run build:packages && mkdir -p downloads && npm pack -w @packforge/core --pack-destination downloads && npm pack -w @packforge/packs --pack-destination downloads && npm pack -w @packforge/builder-kit --pack-destination downloads",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@shoelace-style/shoelace": "^2.20.1",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
+  }
+}
